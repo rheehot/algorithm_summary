@@ -162,40 +162,40 @@
 > vector<pair<int, int> > adj[MAX_V];
 > // 주어진 그래프에 대해 최소 스패닝 트리에 포함된 간선의 목록을 selected에 저장하고, 가중치의 합을 반환한다.
 > int prim(vector<pair<int, int>& selected) {
->   selected.clear();
->   // 해당 정점이 트리에 포함되어 있나?
->   vector<bool> added(V, false);
->   // 트리에 인접한 간선 중 해당 정점에 닿는 최소 간선의 정보를 저장한다.
->   vector<int> minWeight(V, INF);
->   vector<int> parent(V, -1);
->   // 가중치 합을 저장할 변수
->   int cost = 0;
->   // 0번 정점을 시작점으로 항상 트리에 가장 먼저 추가 한다.
->   minWeight[0] = parent[0] = 0;
->   for (iter = 0; iter < V; ++iter) {
->     // 다음에 트리에 추가할 정점 u를 찾는다.
->     int u = -1;
->     for (int v = 0; v < V; ++v) {
->       if (!added[v] && (u == -1 || minWeight[u] > minWeight[v])) {
->       	u = v;
->       }
->     }
->     // (parent[u], u)를 트리에 추가 한다.
->    	if (parent[u] != u) selected.push_back(make_pair(parent[u], u));
->     cost += minWeight[u];
->     added[u] = true;
->     // u에 인접한 간선 (u, v)들을 검사 한다.
->     for (int i = 0; i < adj[u].size(); ++i) {
->       int v = adj[u][i].first;
->       int w = adj[u][i].second;
->       if (!added[v] && minWeight[v] > w) {
->         minWeight[v] = w;
->         parent[v] = u;
->       }
->     }
->   }
+>   	selected.clear();
+>   	// 해당 정점이 트리에 포함되어 있나?
+>   	vector<bool> added(V, false);
+>   	// 트리에 인접한 간선 중 해당 정점에 닿는 최소 간선의 정보를 저장한다.
+>   	vector<int> minWeight(V, INF);
+>   	vector<int> parent(V, -1);
+>   	// 가중치 합을 저장할 변수
+>   	int cost = 0;
+>   	// 0번 정점을 시작점으로 항상 트리에 가장 먼저 추가 한다.
+>   	minWeight[0] = parent[0] = 0;
+>   	for (iter = 0; iter < V; ++iter) {
+>     		// 다음에 트리에 추가할 정점 u를 찾는다.
+>     		int u = -1;
+>     		for (int v = 0; v < V; ++v) {
+>       		if (!added[v] && (u == -1 || minWeight[u] > minWeight[v])) {
+>       			u = v;
+>       		}
+>     		}
+>     		// (parent[u], u)를 트리에 추가 한다.
+>    		if (parent[u] != u) selected.push_back(make_pair(parent[u], u));
+>     		cost += minWeight[u];
+>     		added[u] = true;
+>     		// u에 인접한 간선 (u, v)들을 검사 한다.
+>     		for (int i = 0; i < adj[u].size(); ++i) {
+>       		int v = adj[u][i].first;
+>       		int w = adj[u][i].second;
+>       		if (!added[v] && minWeight[v] > w) {
+>         		minWeight[v] = w;
+>         		parent[v] = u;
+>       		}
+>     		}
+>   	}
 >   
->   return cost;
+>   	return cost;
 > }
 > ```
 >
