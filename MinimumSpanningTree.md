@@ -18,7 +18,7 @@
 
 ### 스패닝 트리 (Spanning Tree) 의 특징
 
-![image-20190501173936568](/Users/janghyoseog/Documents/image-20190501173936568.png)
+![image-20190501173936568](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/image-20190501173936568.png?raw=true)
 
 * (b) 는 (a) 에 표시된 올바른 스패닝 트리이다.
 * (c) 에서 붉은색으로 표시된 간선들은 스패닝 트리가 아니다. **사이클이 있고, 그래프가 하나로 연결되어 있지 않기 때문이다.**
