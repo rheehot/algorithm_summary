@@ -108,36 +108,36 @@
 > 
 > // 주어진 그래프에 대해 최소 스패닝 트리에 포함된 간선의 목록을 selected에 저장하고, 가중치의 합을 반환한다.
 > int kruskal(vector<pair<int, int> >& selected) {
->   int cost = 0;
->   selected.clear();
->   // tuple(가중치, 정점1, 정점2) 의 목록을 얻는다.
->   vector<tuple<int, int, int> > edges;
->   for (int u = 0; u < V; ++u) {
->     for (int i = 0; i < adj[u].size(); ++i) {
->       int v = adj[u][i].first;	// 연결된 정점의 번호
->       int w = adj[u][i].second;	// 가중치
->       edges.push_back(make_tuple(w, u, v));
->     }
->   }
+>   	int cost = 0;
+>   	selected.clear();
+>   	// tuple(가중치, 정점1, 정점2) 의 목록을 얻는다.
+>   	vector<tuple<int, int, int> > edges;
+>   	for (int u = 0; u < V; ++u) {
+>     		for (int i = 0; i < adj[u].size(); ++i) {
+>       		int v = adj[u][i].first;	// 연결된 정점의 번호
+>       		int w = adj[u][i].second;	// 가중치
+>       		edges.push_back(make_tuple(w, u, v));
+>    		}
+>   	}
 >   
->   // 가중치 순으로 정렬
->   sort(edges.begin(), edges.end());
+>   	// 가중치 순으로 정렬
+>   	sort(edges.begin(), edges.end());
 >   
->   // 처음엔 모든 정점이 서로 분리되어 있다.
->   DisjoinSet sets(V);
->   for (int i = 0; i < edges.size(); ++i) {
->     // 간선 (u, v)를 검사한다.
->     int w, u, v;
->     tie(w, u, v) = edges[i];
->     // 이미 u와 v가 연결되어 있을 경우 무시 한다.
->     if (sets.find(u) == sets.find(v)) continue;
->     // 정점 u와 v를 합친다.
->     sets.merge(u, v);
->     selected.push_back(make_pair(u, v));
->     cost += w;
->   }
+>   	// 처음엔 모든 정점이 서로 분리되어 있다.
+>   	DisjoinSet sets(V);
+>   	for (int i = 0; i < edges.size(); ++i) {
+>     		// 간선 (u, v)를 검사한다.
+>    		int w, u, v;
+>     		tie(w, u, v) = edges[i];
+>     		// 이미 u와 v가 연결되어 있을 경우 무시 한다.
+>     		if (sets.find(u) == sets.find(v)) continue;
+>     		// 정점 u와 v를 합친다.
+>     		sets.merge(u, v);
+>     		selected.push_back(make_pair(u, v));
+>    		cost += w;
+>   	}
 >   
->   return cost;
+>   	return cost;
 > }
 > ```
 >
@@ -148,11 +148,92 @@
 
 * **프림 알고리즘 (Prim MST Algorithm)** - 다익스트라 알고리즘과 거의 같은 형태를 띠고 있는데, 비슷한 알고리즘으로 다른 문제를 어떻게 해결하는지에 중점을 둘 것
 
-> 
+> * 크루스칼 알고리즘과 진행 방식이 다르다. 크루스칼 알고리즘에서는 여기저기서 산발적으로 만들어진 트리의 조각을 합쳐 스패닝 트리를 만들지만 프림 알고리즘에서는 하나의 시작점으로 구성된 트리에 간선을 하나씩 추가하며 스패닝 트리가 될때까지 키워 나간다.
+> * 핵심은 스패닝 트리에 속하지 않은 각 정점에 대해 트리와 이 정점을 연결하는 가장 짧은 간선에 대한 정보를 저장하고, 각 정점을 순회하면서 다음에 추가할 정점을 찾으면 O(E) 대신에 O(V) 시간에 다음에 추가할 간선을 찾을 수 있다.
+> * 프림 알고리즘은 이를 위해 트리와 이 정점을 연결하는 간선의 최소 가중치를 저장하는 배열 minWeight[]를 유지 한다.
+> * minWeight[] 배열은 트리에 정점을 새로 추가할 때마다 이 정점에 인접한 간선들을 순회하면서 갱신하게 된다.
+>
+> ```c++
+> const int MAX_V = 100;
+> const int INF = 987654321;
+> // 정점의 갯수
+> int V;
+> // 그래프의 인접 리스트 (연결된 정점의 번호, 간선 가중치) 쌍을 담는다.
+> vector<pair<int, int> > adj[MAX_V];
+> // 주어진 그래프에 대해 최소 스패닝 트리에 포함된 간선의 목록을 selected에 저장하고, 가중치의 합을 반환한다.
+> int prim(vector<pair<int, int>& selected) {
+>   selected.clear();
+>   // 해당 정점이 트리에 포함되어 있나?
+>   vector<bool> added(V, false);
+>   // 트리에 인접한 간선 중 해당 정점에 닿는 최소 간선의 정보를 저장한다.
+>   vector<int> minWeight(V, INF);
+>   vector<int> parent(V, -1);
+>   // 가중치 합을 저장할 변수
+>   int cost = 0;
+>   // 0번 정점을 시작점으로 항상 트리에 가장 먼저 추가 한다.
+>   minWeight[0] = parent[0] = 0;
+>   for (iter = 0; iter < V; ++iter) {
+>     // 다음에 트리에 추가할 정점 u를 찾는다.
+>     int u = -1;
+>     for (int v = 0; v < V; ++v) {
+>       if (!added[v] && (u == -1 || minWeight[u] > minWeight[v])) {
+>       	u = v;
+>       }
+>     }
+>     // (parent[u], u)를 트리에 추가 한다.
+>    	if (parent[u] != u) selected.push_back(make_pair(parent[u], u));
+>     cost += minWeight[u];
+>     added[u] = true;
+>     // u에 인접한 간선 (u, v)들을 검사 한다.
+>     for (int i = 0; i < adj[u].size(); ++i) {
+>       int v = adj[u][i].first;
+>       int w = adj[u][i].second;
+>       if (!added[v] && minWeight[v] > w) {
+>         minWeight[v] = w;
+>         parent[v] = u;
+>       }
+>     }
+>   }
+>   
+>   return cost;
+> }
+> ```
+>
+> * 우선순위 큐를 사용하지 않고 다익스트라 알고리즘을 구현한 것과 비슷한 형태를 갖고 있다.
+> * **각 정점에 대해 지금까지 알려진 최단 거리를 저장하는 것이 아니라 마지막 간선의 가중치를 저장하고 있다는점이 다익스트라 알고리즘과 다르다.**
+> * 다익스트라 알고리즘에서처럼 우선순위 큐를 사용하도록 하면 O(|E|log|V|)에 프림 알고리즘을 구현하는 것이 가능하다.
+> * 이 경우 우선순위 큐는 각 정점의 번호를 minWeight[]이 증가하는 순으로 정렬해 담고있게 된다.
+
+
+
+### 다익스트라 알고리즘과 최소 스패닝 트리 (프림 알고리즘)의 차이
+
+* 다익스트라 알고리즘의 경우 **한 노드에서 다른 노드까지 가장 작은 가중치를 가지는 경로이다.**
+* 최소 스패닝 트리는 **각 노드들의 가중치가 가장 작은 상태로 모든 정점을 연결하는 것이다.**
+* 가장 중요한 것은 가중치를 갱신하는 순간이 다르다.
+* 다익스트라의 알고리즘과 구현을 이해하고 있고, 최소 스패닝 트리의 프림 알고리즘의 구현을 이해하고 있다면 다음을 보자
+
+| ![img](https://t1.daumcdn.net/cfile/tistory/990270505B137A262D)*다익스트라 알고리즘* | ![img](https://t1.daumcdn.net/cfile/tistory/99D926455B137AD812)*최소 신장 트리 알고리즘* |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+|                                                              |                                                              |
+
+* 다익스트라의 경우
+
+> 시작 정점(A)에서 A -> B은 5의 비용, A -> C은 7의 비용, A -> D은 3의 비용이 든다. B -> C의 비용이 1인 경우에서 보자면 기존에는 A -> C 이동하면 7의 비용이지만, A -> B -> C 이동한다면 6의 비용으로 기존의 값보다 최소 비용을 갖게 된다.
+> 즉, 다익스트라 알고리즘은 **그래프 내의 시작 정점에서 다른 정점으로 향하는 가장 짧은 경로를 구하는 알고리즘이다.**
+
+* 최소 스패닝 트리의 경우
+
+> 시작 정점(A)에서 A -> B은 5의 비용, A -> C은 7의 비용, A -> D은 3의 비용이 든다. 그 다음 내부 알고리즘으로 인해 A 정점을 최소 스패닝 트리에 추가하고 가장 가중치가 작은 D 정점에서 최소 스패닝 트리에 추가된 A 정점을 제외한 B 정점과 C 정점의 가중치를 확인한다. D 정점에서 C 정점을 확인할때 원래 비용은 7로 기록되어있으나 이것은 A -> C 에서 비용이다. 따라서 D 정점에 입장에서는 바라봤을때 자기 자신과 인접한 간선의 가중치를 확인하고 D -> C 간선의 가중치를 4로 갱신한다.
+> 즉, 최소 스패닝 트리는 **현재 정점의 입장**에서 **자기 자신과 인접한 간선의 가중치를 확인하고 갱신하는 것**이다.
+
+* A 에서 부터 B 까지의 경로에서 **다익스트라는 A -> B** 이며, **최소 스패닝 트리는 A -> D -> C -> B**  이다.
+* 두 개의 알고리즘은 진행 방식이 많이 다르다.
 
 ---
 
 ## 참고
 
 * [ 알고리즘 - 최소 스패닝 트리(Minimum Spanning Tree, MST)란 ](https://gmlwjd9405.github.io/2018/08/28/algorithm-mst.html)
-* 프로그래밍 대회에서 배우는 알고리즘 문제 해결 전략 (구종만) - 책 참고
+* 프로그래밍 대회에서 배우는 알고리즘 문제 해결 전략 (구종만)
+* [최소 스패닝 트리와 다익스트라의 차이](https://red-pulse.tistory.com/120) 
