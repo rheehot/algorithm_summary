@@ -177,7 +177,7 @@
 >     		int u = -1;
 >     		for (int v = 0; v < V; ++v) {
 >       			if (!added[v] && (u == -1 || minWeight[u] > minWeight[v])) {
->       					u = v;
+>       				u = v;
 >       			}
 >     		}
 >     		// (parent[u], u)를 트리에 추가 한다.
@@ -189,8 +189,8 @@
 >       			int v = adj[u][i].first;
 >       			int w = adj[u][i].second;
 >       			if (!added[v] && minWeight[v] > w) {
->         				minWeight[v] = w;
->         				parent[v] = u;
+>         			minWeight[v] = w;
+>         			parent[v] = u;
 >       			}
 >     		}
 >   	}
