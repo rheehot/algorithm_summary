@@ -114,9 +114,9 @@
 >   	vector<tuple<int, int, int> > edges;
 >   	for (int u = 0; u < V; ++u) {
 >     		for (int i = 0; i < adj[u].size(); ++i) {
->       		int v = adj[u][i].first;	// 연결된 정점의 번호
->       		int w = adj[u][i].second;	// 가중치
->       		edges.push_back(make_tuple(w, u, v));
+>       			int v = adj[u][i].first;	// 연결된 정점의 번호
+>       			int w = adj[u][i].second;	// 가중치
+>       			edges.push_back(make_tuple(w, u, v));
 >    		}
 >   	}
 >   
@@ -176,9 +176,9 @@
 >     		// 다음에 트리에 추가할 정점 u를 찾는다.
 >     		int u = -1;
 >     		for (int v = 0; v < V; ++v) {
->       		if (!added[v] && (u == -1 || minWeight[u] > minWeight[v])) {
->       			u = v;
->       		}
+>       			if (!added[v] && (u == -1 || minWeight[u] > minWeight[v])) {
+>       					u = v;
+>       			}
 >     		}
 >     		// (parent[u], u)를 트리에 추가 한다.
 >    		if (parent[u] != u) selected.push_back(make_pair(parent[u], u));
@@ -186,12 +186,12 @@
 >     		added[u] = true;
 >     		// u에 인접한 간선 (u, v)들을 검사 한다.
 >     		for (int i = 0; i < adj[u].size(); ++i) {
->       		int v = adj[u][i].first;
->       		int w = adj[u][i].second;
->       		if (!added[v] && minWeight[v] > w) {
->         		minWeight[v] = w;
->         		parent[v] = u;
->       		}
+>       			int v = adj[u][i].first;
+>       			int w = adj[u][i].second;
+>       			if (!added[v] && minWeight[v] > w) {
+>         				minWeight[v] = w;
+>         				parent[v] = u;
+>       			}
 >     		}
 >   	}
 >   
