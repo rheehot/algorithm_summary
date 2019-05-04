@@ -87,8 +87,7 @@ while (!pq.empty()) {
   // why? 다음 거리들은 currentDist + ? 이기 때문에 dist 배열에 기록되어 있는 값보다
   // 무조건 커질 수 밖에 없기 때문에 continue 로 무시한다.
   if (dist[currentVertex] < currentDist) continue;
-  
- 	for (int i = 0; i < adj[currentVertex].size(); i++) {
+  for (int i = 0; i < adj[currentVertex].size(); i++) {
     int nextDist = currentDist + adj[currentVertex][i].second;
     int nextVertex = adj[currentVertex][i].first;
     if (dist[nextVertex] > nextDist) {
