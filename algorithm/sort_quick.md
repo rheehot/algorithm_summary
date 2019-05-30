@@ -13,31 +13,34 @@
 ### 소스 코드
 ```c++
 // quick sort
-void swap(vector<int>& arr, int start, int end) {
-    int temp    = arr[start];
-    arr[start]  = arr[end];
-    arr[end]    = temp;
+#include <vector>
+using namespace std;
+
+void swap(vector<int>& arr, int s, int e) {
+    int temp = arr[s];
+    arr[s] = arr[e];
+    arr[e] = temp;
 }
 
-int partition(vector<int>& arr, int start, int end) {
-    int pivot = arr[(start + end) / 2];
-    while (start <= end) {
-        while (pivot > arr[start]) start++;
-        while (pivot < arr[end]) end--;
-        if (start <= end) {
-            swap(arr, start, end);
-            start++;
-            end--;
+int partition(vector<int>& arr, int s, int e) {
+    int pivot = arr[(s + e) / 2];
+    while (s <= e) {
+        while (pivot > arr[s]) s++;
+        while (pivot < arr[e]) e--;
+        if (s <= e) {
+            swap(arr, s, e);
+            s++;
+            e--;
         }
     }
-    return start;
+    return s;
 }
 
-void quickSort(vector<int>& arr, int start, int end) {
-    int part = partition(arr, start, end);
-    if (start < part-1) quickSort(arr, start, part-1); 
-    if (part < end)     quickSort(arr, part, end);
-} 
+void quickSort(vector<int>& arr, int s, int e) {
+    int p = partition(arr, s, e);
+    if (s < p-1) quickSort(arr, s, p-1);
+    if (p < e) quickSort(arr, p, e);
+}
 ```
 
 
