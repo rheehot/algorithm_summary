@@ -26,17 +26,15 @@
 ```c++
 // merge sort
 void merge(vector<int>& arr, int start, int mid, int end) {
-    vector<int> sortedArr;
-    int i = start;
-    int j = mid+1;
+    vector<int> sorted(arr.size());
+    int idx = start, i = start, j = mid+1;
     while (i <= mid && j <= end) {
-        if (arr[i] < arr[j]) sortedArr.push_back(arr[i++]);
-        else sortedArr.push_back(arr[j++]);
+        if (arr[i] < arr[j]) sorted[idx++] = arr[i++];
+        else sorted[idx++] = arr[j++];
     }
-    while (i <= mid) sortedArr.push_back(arr[i++]);
-    while (j <= end) sortedArr.push_back(arr[j++]);
-    int index = 0;
-    for (int k = start; k <= end k++) arr[k] = sortedArr[index++];
+    while (i <= mid) sorted[idx++] = arr[i++];
+    while (j <= end) sorted[idx++] = arr[j++];
+    for (int k = start; k <= end; k++) arr[k] = sorted[k];
 }
 
 void mergeSort(vector<int>& arr, int start, int end) {
