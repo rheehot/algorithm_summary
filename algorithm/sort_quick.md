@@ -57,3 +57,6 @@ void quickSort(vector<int>& arr, int s, int e) {
 
 ### 퀵 정렬 알고리즘 시간 복잡도
 
+| Best  |  Avg  |  Worst  |
+| :----:| :---: | :-----: |
+| nlogn | nlogn | n^2   |
