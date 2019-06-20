@@ -41,7 +41,7 @@ vector<int> countingSort(vector<int>& arr) {
 
     return sorted;
 }
-
+```
 
 
 ### 계수 정렬 시간 복잡도
