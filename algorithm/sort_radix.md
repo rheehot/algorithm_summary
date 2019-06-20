@@ -25,15 +25,15 @@
 
 #### **[ 1의 자리의 정렬 ]**
 
-![image-20190620155903693](/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190620155903693.png)
+![image-20190620155903693](https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190620155903693.png?raw=true)
 
 * **1의 자리에서 0 ~ 9 값을 저장할 Queue 공간을 할당합니다.**
 
-![image-20190620160853270](/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190620160853270.png)
+![image-20190620160853270](https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190620160853270.png?raw=true)
 
 * **1의 자리의 값을 구한 다음, 그 값이 해당하는 Queue 자리에 저장합니다.**
 
-![image-20190620161146692](/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190620161146692.png)
+![image-20190620161146692](https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190620161146692.png?raw=true)
 
 * **1의 자리 정렬한 결과는 다음과 같습니다.**
 
@@ -41,15 +41,15 @@
 
 #### **[ 10의 자리의 정렬 ]**
 
-![image-20190620161412498](/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190620161412498.png)
+![image-20190620161412498](https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190620161412498.png?raw=true)
 
 * **10의 자리에서 0 ~ 9 값을 저장할 Queue 공간을 할당합니다.**
 
-![image-20190620161736645](/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190620161736645.png)
+![image-20190620161736645](https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190620161736645.png?raw=true)
 
 * **10의 자리 값을 구한 다음에 값이 해당하는 Queue 자리에 저장합니다. **
 
-![image-20190620161938762](/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190620161938762.png)
+![image-20190620161938762](https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190620161931875.png?raw=true)
 
 * **10의 자리를 정렬한 결과는 다음과 같습니다.**
 
@@ -57,15 +57,15 @@
 
 #### **[ 100의 자리의 정렬 (마지막) ]**
 
-![image-20190620162127087](/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190620162127087.png)
+![image-20190620162127087](https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190620162127087.png?raw=true)
 
 * **100의 자리에서 0 ~ 9 값을 저장할 Queue 공간을 할당합니다.**
 
-![image-20190620162404126](/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190620162404126.png)
+![image-20190620162404126](https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190620162404126.png?raw=true)
 
 * **100의 자리 값을 구한 다음에 값이 해당하는 Queue 자리에 저장합니다. **
 
-![image-20190620162516588](/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190620162516588.png)
+![image-20190620162516588](https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190620162516588.png?raw=true)
 
 * **100의 자리를 정렬한 결과는 다음과 같습니다.**
 
