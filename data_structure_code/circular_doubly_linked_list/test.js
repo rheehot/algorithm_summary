@@ -47,26 +47,3 @@ describe('LinkedList Test', () => {
         }
     });
 });
-
-// linkedList.addFirst(1);
-// linkedList.addFirst(2);
-// linkedList.addLast(3);
-// linkedList.addFirst(4);
-// linkedList.addLast(5);
-// linkedList.addLast(6);
-// linkedList.add(2, 7);
-// linkedList.add(5, 8);
-// // console.log(linkedList.getItem(0));
-// // console.log(linkedList.getItem(1));
-// // console.log(linkedList.getItem(2));
-// // console.log(linkedList.getItem(3));
-// // console.log(linkedList.getItem(4));
-// // console.log(linkedList.getItem(5));
-// // console.log(linkedList.getItem(6));
-// // console.log(linkedList.getItem(7));
-// //linkedList.print('all');
-// linkedList.add(0, 10);
-// linkedList.add(0, 15);
-// linkedList.add(1, 20);
-// linkedList.add(7, 25);
-// linkedList.print('item');
