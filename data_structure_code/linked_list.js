@@ -83,13 +83,10 @@ class LinkedList {
         // --this.nodeSize;
     }
 
-    print(type) {
+    printAll() {
         let node = this.head.next;
         while (node !== this.head) {
-            switch (type) {
-                case 'all'  : console.log(node);        break;
-                case 'item' : console.log(node.item);   break;
-            }
+            console.log(node);
             node = node.next;
         }
     }

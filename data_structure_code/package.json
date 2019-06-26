@@ -1,0 +1,15 @@
+{
+  "name": "data_structure_code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "linked_list.js",
+  "scripts": {
+    "test": "./node_modules/jest/bin/jest.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
