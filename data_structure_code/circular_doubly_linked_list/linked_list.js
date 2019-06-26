@@ -2,7 +2,7 @@ const Node = require('./node');
 
 // Circular Doubly Linked List
 class LinkedList {
-    constructor() { 
+    constructor() {
         this.head = new Node('head');
         this.nodeSize = 0;
     }
@@ -27,10 +27,6 @@ class LinkedList {
     }
 
     createFirstNode(item) {
-        if (this.head.prev !== null || this.head.next !== null) {
-            throw Error(`[this head node] prev : ${this.head.prev}, next :${this.head.next}`);
-        }
-
         const newNode = new Node(item);
         this.head.prev = newNode;
         this.head.next = newNode;
@@ -40,7 +36,7 @@ class LinkedList {
     }
 
     addFirst(item) {
-        if (this.size() === 0) {
+        if (this.head.prev === null && this.head.next === null) {
             this.createFirstNode(item);
             return;
         }
@@ -54,7 +50,7 @@ class LinkedList {
     }
 
     addLast(item) {
-        if (this.size() === 0) {
+        if (this.head.prev === null && this.head.next === null) {
             this.createFirstNode(item);
             return;
         }
@@ -68,18 +64,18 @@ class LinkedList {
     }
 
     add(index, item) {
-        if (this.size() === 0) {
+        if (this.head.prev === null && this.head.next === null) {
             this.createFirstNode(item);
-            return;
-        }
-
-        if (index >= this.size()) {
-            this.addLast(item);
             return;
         }
 
         if (index === 0) {
             this.addFirst(item);
+            return;
+        }
+
+        if (index >= this.size()) {
+            this.addLast(item);
             return;
         }
 
@@ -89,29 +85,53 @@ class LinkedList {
         newNode.prev = prevNode;
         prevNode.next.prev = newNode;
         prevNode.next = newNode;
-        ++this.nodeSize;    
+        ++this.nodeSize;
     }
 
     deleteFirst() {
-        if (this.size() === 0) 
+        if (this.head.prev === null && this.head.next === null)
             throw Error(`Linked List is empty!`);
+
+        if ((--this.nodeSize) === 0) {
+            this.head.prev = this.head.next = null;
+            return;
+        }
 
         this.head.next.next.prev = this.head;
         this.head.next = this.head.next.next;
-        --this.nodeSize;
     }
 
     deleteLast() {
-        if (this.size() === 0) 
+        if (this.head.prev === null && this.head.next === null)
             throw Error(`Linked List is empty!`);
-            
+
+        if ((--this.nodeSize) === 0) {
+            this.head.prev = this.head.next = null;
+            return;
+        }
+
         this.head.prev.prev.next = this.head;
         this.head.prev = this.head.prev.prev;
-        --this.nodeSize;
     }
 
     delete(index) {
-        // --this.nodeSize;
+        if ((this.head.prev === null && this.head.next === null) || index >= this.size())
+            throw Error(`Linked List is empty!`);
+
+        if (index === 0 || this.size() === 1) {
+            this.deleteFirst();
+            return;
+        }
+
+        if (index === this.size() - 1) {
+            this.deleteLast();
+            return;
+        }
+
+        const prevNode = this.find(index - 1);
+        prevNode.next.next.prev = prevNode;
+        prevNode.next = prevNode.next.next;
+        --this.nodeSize;
     }
 
     printAll() {
