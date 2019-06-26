@@ -1,7 +1,8 @@
 const LinkedList = require('./linked_list');
-const linkedList = new LinkedList();
 
-describe('Linked List test', () => {
+describe('***** Linked List test -- [ Integer ] *****', () => {
+    const linkedList = new LinkedList();
+
     test('Add first test', () => {
         linkedList.addFirst(1);
         expect(linkedList.getItem(0)).toEqual(1);
@@ -94,12 +95,41 @@ describe('Linked List test', () => {
     });
 
     test('Print Item', () => {
-        const testArr = [15, 25];
+        // linkedList.printAll();
+        console.log(`------- Integer -------`);
         for (let i = 0; i < linkedList.size(); i++) {
-            expect(linkedList.getItem(i)).toEqual(testArr[i]);
+            console.log(linkedList.getItem(i));
         }
-        expect(linkedList.size()).toEqual(2);
-        linkedList.printAll();
+        console.log(`size : ${linkedList.size()}`);
+    });
+});
+
+describe('***** Linked List test -- [ String ] *****', () => {
+    const linkedList = new LinkedList();
+
+    test(`Add or Delete test`, () => {
+        linkedList.add(0, 'hyodol');
+        linkedList.add(1, 'cast');
+        linkedList.addFirst('warm');
+        linkedList.addLast('cool');
+        linkedList.add(10, 'funny');
+        linkedList.delete(3);
+        linkedList.delete(3);
+        linkedList.deleteFirst();
+        linkedList.deleteFirst();
+        linkedList.delete(0);
+        linkedList.add(0, 'test1');
+        linkedList.add(2, 'please..');
+        linkedList.add(1, 'help...!');
+        linkedList.deleteLast();
+    });
+
+    test('Print Item', () => {
+        // linkedList.printAll();
+        console.log(`------- String -------`);
+        for (let i = 0; i < linkedList.size(); i++) {
+            console.log(linkedList.getItem(i));
+        }
         console.log(`size : ${linkedList.size()}`);
     });
 });
