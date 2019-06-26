@@ -27,6 +27,9 @@ class LinkedList {
     }
 
     createFirstNode(item) {
+        if (this.head.prev !== null || this.head.next !== null) {
+            throw Error(`[this head node] prev : ${this.head.prev}, next :${this.head.next}`);
+        }
         const newNode = new Node(item);
         this.head.prev = newNode;
         this.head.next = newNode;
@@ -36,9 +39,8 @@ class LinkedList {
     }
 
     addFirst(item) {
-        if (this.head.prev === null && this.head.next === null) {
-            this.createFirstNode(item);
-        } else {
+        if (this.size() <= 0) this.createFirstNode(item);
+        else {
             const newNode = new Node(item);
             newNode.prev = this.head;
             newNode.next = this.head.next;
@@ -49,9 +51,8 @@ class LinkedList {
     }
 
     addLast(item) {
-        if (this.head.prev === null && this.head.next === null) {
-            this.createFirstNode(item);
-        } else {
+        if (this.size() <= 0) this.createFirstNode(item);
+        else {
             const newNode = new Node(item);
             newNode.next = this.head;
             newNode.prev = this.head.prev;
@@ -62,9 +63,8 @@ class LinkedList {
     }
 
     add(index, item) {
-        if (this.head.prev === null && this.head.next === null) {
-            this.createFirstNode(item);
-        } else {
+        if (this.size() <= 0) this.createFirstNode(item);
+        else {
             if (index >= this.size()) this.addLast(item);
             else if (index === 0) this.addFirst(item);
             else {
@@ -80,14 +80,17 @@ class LinkedList {
     }
 
     deleteFirst() {
-        if (this.size() <= 0) throw new Error(`Linked List is empty!`);
+        if (this.size() <= 0) throw Error(`Linked List is empty!`);
         this.head.next.next.prev = this.head;
         this.head.next = this.head.next.next;
         --this.nodeSize;
     }
 
     deleteLast() {
-
+        if (this.size() <= 0) throw Error(`Linked List is empty!`);
+        this.head.prev.prev.next = this.head;
+        this.head.prev = this.head.prev.prev;
+        --this.nodeSize;
     }
 
     delete(index) {
