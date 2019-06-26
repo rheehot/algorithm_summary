@@ -11,8 +11,8 @@ class LinkedList {
 
     find(index) {
         const tIndex = index + 1;
-        const mid = parseInt(this.size()) / 2 + 1;
-        let count = (mid <= tIndex) ? (this.size() - index) : tIndex;
+        const mid = parseInt(this.nodeSize) / 2 + 1;
+        let count = (mid <= tIndex) ? (this.nodeSize - index) : tIndex;
         let targetNode = this.head;
         while (count--) {
             if (mid <= tIndex) targetNode = targetNode.prev;
@@ -22,7 +22,7 @@ class LinkedList {
     }
 
     getItem(index) {
-        if (index >= this.size()) return -1;
+        if (index >= this.nodeSize) return -1;
         return this.find(index).item;
     }
 
@@ -32,7 +32,7 @@ class LinkedList {
         this.head.next = newNode;
         newNode.prev = this.head;
         newNode.next = this.head;
-        ++this.nodeSize;
+        this.nodeSize++;
     }
 
     addFirst(item) {
@@ -46,7 +46,7 @@ class LinkedList {
         newNode.next = this.head.next;
         this.head.next.prev = newNode;
         this.head.next = newNode;
-        ++this.nodeSize;
+        this.nodeSize++;
     }
 
     addLast(item) {
@@ -60,21 +60,16 @@ class LinkedList {
         newNode.prev = this.head.prev;
         this.head.prev.next = newNode;
         this.head.prev = newNode;
-        ++this.nodeSize;
+        this.nodeSize++;
     }
 
     add(index, item) {
-        if (this.head.prev === null && this.head.next === null) {
-            this.createFirstNode(item);
-            return;
-        }
-
         if (index === 0) {
             this.addFirst(item);
             return;
         }
 
-        if (index >= this.size()) {
+        if (index >= this.nodeSize) {
             this.addLast(item);
             return;
         }
@@ -85,7 +80,7 @@ class LinkedList {
         newNode.prev = prevNode;
         prevNode.next.prev = newNode;
         prevNode.next = newNode;
-        ++this.nodeSize;
+        this.nodeSize++;
     }
 
     deleteFirst() {
@@ -115,15 +110,15 @@ class LinkedList {
     }
 
     delete(index) {
-        if ((this.head.prev === null && this.head.next === null) || index >= this.size())
+        if (index >= this.nodeSize)
             throw Error(`Linked List is empty!`);
 
-        if (index === 0 || this.size() === 1) {
+        if (index === 0 || this.nodeSize === 1) {
             this.deleteFirst();
             return;
         }
 
-        if (index === this.size() - 1) {
+        if (index === this.nodeSize - 1) {
             this.deleteLast();
             return;
         }
@@ -131,12 +126,16 @@ class LinkedList {
         const prevNode = this.find(index - 1);
         prevNode.next.next.prev = prevNode;
         prevNode.next = prevNode.next.next;
-        --this.nodeSize;
+        this.nodeSize--;
     }
 
     printAll() {
+        if (this.head.next === null) {
+            console.log(this.head);
+            return;
+        }
+
         let node = this.head.next;
-        if (node === null) return;
         while (node !== this.head) {
             console.log(node);
             node = node.next;
