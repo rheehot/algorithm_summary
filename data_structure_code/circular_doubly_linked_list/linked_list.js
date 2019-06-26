@@ -30,6 +30,7 @@ class LinkedList {
         if (this.head.prev !== null || this.head.next !== null) {
             throw Error(`[this head node] prev : ${this.head.prev}, next :${this.head.next}`);
         }
+
         const newNode = new Node(item);
         this.head.prev = newNode;
         this.head.next = newNode;
@@ -39,55 +40,71 @@ class LinkedList {
     }
 
     addFirst(item) {
-        if (this.size() <= 0) this.createFirstNode(item);
-        else {
-            const newNode = new Node(item);
-            newNode.prev = this.head;
-            newNode.next = this.head.next;
-            this.head.next.prev = newNode;
-            this.head.next = newNode;
-            ++this.nodeSize;
+        if (this.size() === 0) {
+            this.createFirstNode(item);
+            return;
         }
+
+        const newNode = new Node(item);
+        newNode.prev = this.head;
+        newNode.next = this.head.next;
+        this.head.next.prev = newNode;
+        this.head.next = newNode;
+        ++this.nodeSize;
     }
 
     addLast(item) {
-        if (this.size() <= 0) this.createFirstNode(item);
-        else {
-            const newNode = new Node(item);
-            newNode.next = this.head;
-            newNode.prev = this.head.prev;
-            this.head.prev.next = newNode;
-            this.head.prev = newNode;
-            ++this.nodeSize;
+        if (this.size() === 0) {
+            this.createFirstNode(item);
+            return;
         }
+
+        const newNode = new Node(item);
+        newNode.next = this.head;
+        newNode.prev = this.head.prev;
+        this.head.prev.next = newNode;
+        this.head.prev = newNode;
+        ++this.nodeSize;
     }
 
     add(index, item) {
-        if (this.size() <= 0) this.createFirstNode(item);
-        else {
-            if (index >= this.size()) this.addLast(item);
-            else if (index === 0) this.addFirst(item);
-            else {
-                const prevNode = this.find(index - 1);
-                const newNode = new Node(item);
-                newNode.next = prevNode.next;
-                newNode.prev = prevNode;
-                prevNode.next.prev = newNode;
-                prevNode.next = newNode;
-                ++this.nodeSize;
-            }
+        if (this.size() === 0) {
+            this.createFirstNode(item);
+            return;
         }
+
+        if (index >= this.size()) {
+            this.addLast(item);
+            return;
+        }
+
+        if (index === 0) {
+            this.addFirst(item);
+            return;
+        }
+
+        const prevNode = this.find(index - 1);
+        const newNode = new Node(item);
+        newNode.next = prevNode.next;
+        newNode.prev = prevNode;
+        prevNode.next.prev = newNode;
+        prevNode.next = newNode;
+        ++this.nodeSize;    
     }
 
     deleteFirst() {
-        if (this.size() <= 0) throw Error(`Linked List is empty!`);
+        if (this.size() === 0) 
+            throw Error(`Linked List is empty!`);
+
         this.head.next.next.prev = this.head;
         this.head.next = this.head.next.next;
         --this.nodeSize;
     }
 
     deleteLast() {
-        if (this.size() <= 0) throw Error(`Linked List is empty!`);
+        if (this.size() === 0) 
+            throw Error(`Linked List is empty!`);
+            
         this.head.prev.prev.next = this.head;
         this.head.prev = this.head.prev.prev;
         --this.nodeSize;
