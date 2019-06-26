@@ -136,6 +136,7 @@ class LinkedList {
 
     printAll() {
         let node = this.head.next;
+        if (node === null) return;
         while (node !== this.head) {
             console.log(node);
             node = node.next;
