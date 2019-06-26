@@ -59,10 +59,47 @@ describe('Linked List test', () => {
         expect(linkedList.getItem(linkedList.size() - 1)).toEqual(3);
     });
 
+    test(`delete(index) item test`, () => {
+        linkedList.delete(4);
+        expect(linkedList.getItem(4)).toEqual(3);
+        linkedList.delete(1);
+        expect(linkedList.getItem(1)).toEqual(7);
+        linkedList.delete(1);
+        expect(linkedList.getItem(1)).toEqual(1);
+        linkedList.delete(0);
+        expect(linkedList.getItem(0)).toEqual(1);
+        linkedList.delete(1);
+        expect(linkedList.getItem(0)).toEqual(1);
+        linkedList.delete(0);
+        expect(linkedList.getItem(0)).toEqual(-1);
+    });
+
+    test(`Add or Delete test`, () => {
+        linkedList.add(0, 200);
+        linkedList.add(1, 150);
+        linkedList.addFirst(300);
+        linkedList.addLast(450);
+        linkedList.add(10, 250);
+        linkedList.delete(3);
+        linkedList.delete(3);
+        linkedList.deleteFirst();
+        linkedList.deleteFirst();
+        linkedList.delete(0);
+        linkedList.add(0, 15);
+        linkedList.add(2, 20);
+        linkedList.add(1, 25);
+        linkedList.deleteLast();
+        expect(linkedList.getItem(0)).toEqual(15);
+        expect(linkedList.getItem(1)).toEqual(25);
+    });
+
     test('Print Item', () => {
-        for (let index = 0; index < linkedList.size(); index++) {
-            console.log(linkedList.getItem(index));
+        const testArr = [15, 25];
+        for (let i = 0; i < linkedList.size(); i++) {
+            expect(linkedList.getItem(i)).toEqual(testArr[i]);
         }
+        expect(linkedList.size()).toEqual(2);
+        linkedList.printAll();
         console.log(`size : ${linkedList.size()}`);
     });
 });
