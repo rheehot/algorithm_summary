@@ -7,7 +7,7 @@
     "test": "./node_modules/jest/bin/jest.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jang Hyo Seok (hyodol)",
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.8.0"
