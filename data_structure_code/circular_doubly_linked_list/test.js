@@ -21,9 +21,9 @@ describe('Linked List test', () => {
 
     test('Add last test', () => {
         linkedList.addLast(5);
-        expect(linkedList.getItem(linkedList.size()-1)).toEqual(5);
+        expect(linkedList.getItem(linkedList.size() - 1)).toEqual(5);
         linkedList.addLast(6);
-        expect(linkedList.getItem(linkedList.size()-1)).toEqual(6);
+        expect(linkedList.getItem(linkedList.size() - 1)).toEqual(6);
     });
 
     test('add(index, item) test', () => {
@@ -50,9 +50,19 @@ describe('Linked List test', () => {
         expect(linkedList.getItem(0)).toEqual(4);
     });
 
+    test(`Delete last item test`, () => {
+        linkedList.deleteLast();
+        expect(linkedList.getItem(linkedList.size() - 1)).toEqual(5);
+        linkedList.deleteLast();
+        expect(linkedList.getItem(linkedList.size() - 1)).toEqual(8);
+        linkedList.deleteLast();
+        expect(linkedList.getItem(linkedList.size() - 1)).toEqual(3);
+    });
+
     test('Print Item', () => {
         for (let index = 0; index < linkedList.size(); index++) {
             console.log(linkedList.getItem(index));
         }
+        console.log(`size : ${linkedList.size()}`);
     });
 });
