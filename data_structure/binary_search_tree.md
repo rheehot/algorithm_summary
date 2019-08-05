@@ -32,7 +32,7 @@
 
 * 이진 검색 트리에서 원하는 값을 찾는 과정은 배열에서의 이진 탐색과 비슷하다.
 
-| <img src="/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190805122252217.png" width="400" height="300"> | <img src="/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190805122011604.png" width="400" height="300"> |
+| <img src="https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190805122252217.png?raw=true" width="400" height="300"> | <img src="https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190805122011604.png?raw=true" width="400" height="300"> |
 | :-------------------: | :---------------------: |
 | (a) 이진 검색 트리의 옳은 예 | (b) 이진 검색 트리의 잘못된 예 |
 
