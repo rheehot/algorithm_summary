@@ -48,7 +48,7 @@
 
     * [최소 스패닝 트리(Minimum Spanning Tree, MST)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/MinimumSpanningTree.md)
 
-* 문자열 관련 알고리즘
+* 기타 알고리즘
 
     * [최장 증가 수열(Longest Increasing Subsequence, LIS) 알고리즘](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/LongestIncreasingSubsequence.md)
 
