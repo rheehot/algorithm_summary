@@ -6,9 +6,9 @@
 
 * [선형 자료구조 (배열, 연결리스트)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/LinearDatastructure_Array_LinkedList.md)
 
-* [선형 자료구조 (큐, 스택, 데크)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/LinearDatastructure_Array_LinkedList.md)
-
 * [Javacript로 구현한 원형 연결 리스트(Circular Doubly Linked List)](https://github.com/bestdevhyo1225/algorithm_summary/tree/master/data_structure_code/circular_doubly_linked_list)
+
+* [선형 자료구조 (큐, 스택, 데크)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/LinearDatastructure_Array_LinkedList.md)
 
 * [이진 탐색 트리 (Binary Search Tree)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/binary_search_tree.md)
 
@@ -20,7 +20,7 @@
 
 * 정렬 (Sort)
 
-    * [선택 정렬 (Selection Sort)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/sort_insertion.md)
+    * [선택 정렬 (Selection Sort)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/sort_selection.md)
 
     * [삽입 정렬 (Insertion Sort)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/sort_insertion.md)
 
