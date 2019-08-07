@@ -37,6 +37,8 @@
 #include <algorithm>
 #include <vector>
 
+using namespace std;
+
 int my_binary_search(vector<int>&arr, int key) {
     int start = 0, end = (int)arr.size() - 1;
     int answer = -1;
@@ -113,6 +115,8 @@ int main() {
 #include <algorithm>
 #include <vector>
 
+using namespace std;
+
 int my_lower_bound(vector<int>& arr, int key) {
     int start = 0, end = (int)arr.size();
     while (start < end) {
@@ -182,6 +186,8 @@ int main() {
 #include <iostream>
 #include <algorithm>
 #include <vector>
+
+using namespace std;
 
 int my_upper_bound(vector<int>& arr, int key) {
     int start = 0, end = (int)arr.size();
