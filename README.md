@@ -8,7 +8,7 @@
 
 * [Javacript로 구현한 원형 연결 리스트(Circular Doubly Linked List)](https://github.com/bestdevhyo1225/algorithm_summary/tree/master/data_structure_code/circular_doubly_linked_list)
 
-* [선형 자료구조 (큐, 스택, 데크)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/LinearDatastructure_Array_LinkedList.md)
+* [선형 자료구조 (큐, 스택, 데크)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/LinearDatastructure_Queue_Stack_Deque.md)
 
 * [이진 탐색 트리 (Binary Search Tree)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/binary_search_tree.md)
 
