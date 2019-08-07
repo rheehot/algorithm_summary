@@ -1,4 +1,4 @@
-# DataStructure & Algorithm 이론들을 다시 정리하고 공부하기 위한 Repository
+# DataStructure & Algorithm Study Summary
 
 <br>
 
