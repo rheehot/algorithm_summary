@@ -6,7 +6,7 @@
 
 * [선형 자료구조 (배열, 연결리스트)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/LinearDatastructure_Array_LinkedList.md)
 
-* [Javacript로 구현한 원형 연결 리스트(Circular Doubly Linked List)](https://github.com/bestdevhyo1225/algorithm_summary/tree/master/data_structure_code/circular_doubly_linked_list)
+* [Javacript로 구현한 원형 이중 연결리스트(Circular Doubly Linked List)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure_code/circular_doubly_linked_list/README.md)
 
 * [선형 자료구조 (큐, 스택, 데크)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/LinearDatastructure_Queue_Stack_Deque.md)
 
