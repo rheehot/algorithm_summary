@@ -53,11 +53,8 @@
 
 ### :book: Javascirpt로 구현한 원형 이중 연결리스트 소스 코드 
 
-* Node 클래스
-    * [node.js](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure_code/circular_doubly_linked_list/node.js)
+* Node Class - [node.js](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure_code/circular_doubly_linked_list/node.js)
 
-* 연결리스트 클래스
-    * [linked_list.js](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure_code/circular_doubly_linked_list/linked_list.js)
+* Linked List Class - [linked_list.js](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure_code/circular_doubly_linked_list/linked_list.js)
 
-* Unit 테스트 코드 작성
-    * [test.js](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure_code/circular_doubly_linked_list/test.js)
+* Unit Test Code - [test.js](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure_code/circular_doubly_linked_list/test.js)
