@@ -4,7 +4,7 @@
 
 ### :book: 원형 이중 연결리스트 구조
 
-<img src="/Users/janghyoseog/Library/Application Support/typora-user-images/image-20190807224536510.png" width="700" height="550">
+<img src="https://github.com/bestdevhyo1225/image_repository/blob/master/image-20190807224536510.png?raw=true" width="700" height="550">
 
 <br>
 
