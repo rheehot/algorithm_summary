@@ -18,7 +18,7 @@
 
 ## :book: Algorithm
 
-* 정렬 (Sort)
+* 정렬 알고리즘
 
     * [선택 정렬 (Selection Sort)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/sort_selection.md)
 
@@ -36,15 +36,19 @@
 
     * [안정 정렬과 불안정 정렬](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/stableSort_unstableSort.md)
 
-* [이분 탐색(Binary Search), Lower_Bound, Upper_Bound 알고리즘](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/binary_search.md)
+* 이분 탐색 알고리즘
 
-* 그래프 탐색
+    * [이분 탐색(Binary Search), Lower_Bound, Upper_Bound 알고리즘](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/binary_search.md)
+
+* 그래프 탐색 및 그래프 관련 알고리즘
 
     * [깊이 우선 탐색(Depth First Search, DFS)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/depth_first_search.md)
 
-* [다익스트라(Dijkstra) 최단경로 알고리즘](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/dijkstra.md)
+    * [다익스트라(Dijkstra) 최단경로 알고리즘](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/dijkstra.md)
 
-* [최소 스패닝 트리(Minimum Spanning Tree, MST)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/MinimumSpanningTree.md)
+    * [최소 스패닝 트리(Minimum Spanning Tree, MST)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/MinimumSpanningTree.md)
 
-* [최장 증가 수열(Longest Increasing Subsequence, LIS) 알고리즘](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/LongestIncreasingSubsequence.md)
+* 문자열 알고리즘
+
+    * [최장 증가 수열(Longest Increasing Subsequence, LIS) 알고리즘](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/LongestIncreasingSubsequence.md)
 
