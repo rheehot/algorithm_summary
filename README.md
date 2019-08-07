@@ -38,7 +38,9 @@
 
 * [이분 탐색(Binary Search), Lower_Bound, Upper_Bound 알고리즘](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/binary_search.md)
 
-* [그래프 탐색 - 깊이 우선 탐색(Depth First Search, DFS)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/depth_first_search.md)
+* 그래프 탐색
+
+    * [깊이 우선 탐색(Depth First Search, DFS)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/depth_first_search.md)
 
 * [다익스트라(Dijkstra) 최단경로 알고리즘](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/algorithm/dijkstra.md)
 
