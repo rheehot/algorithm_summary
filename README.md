@@ -6,6 +6,8 @@
 
 * 글을 간단히 정리해서 해당 개념을 반복 숙지하는 것에 대해 목적이 있습니다.
 
+<br>
+
 ## :book: DataStructure
 
 * [선형 자료구조 (배열, 연결리스트)](https://github.com/bestdevhyo1225/algorithm_summary/blob/master/data_structure/LinearDatastructure_Array_LinkedList.md)
